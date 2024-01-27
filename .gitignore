@@ -1,0 +1,10 @@
+*.svg
+*.png
+*.png~
+*.kra
+textures/*
+vine_svg/*
+testout/*
+__pycache__/*
+archive/*
+output/*
