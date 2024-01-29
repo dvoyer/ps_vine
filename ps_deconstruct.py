@@ -1,6 +1,6 @@
 import ps_vine, pickle, argparse
-from os import listdir, makedirs
-from os.path import splitext, isfile, basename, isdir, join
+from os import makedirs
+from os.path import splitext, isfile, basename
 from svgpathtools import svg2paths
 from math import dist
 import numpy as np

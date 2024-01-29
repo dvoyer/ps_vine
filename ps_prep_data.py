@@ -1,4 +1,5 @@
-import ps_vine, pickle, argparse
+import ps_vine
+import pickle, argparse
 import numpy as np
 from os import listdir, makedirs
 from os.path import splitext, isfile, join, basename

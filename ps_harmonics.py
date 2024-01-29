@@ -1,10 +1,10 @@
-import random, pickle, traceback, argparse
 import ps_vine
+import random, traceback, argparse, pickle
 import numpy as np
 from svgpathtools import Path, Line, svg2paths2, wsvg
 from PIL import Image, ImageFilter
 from os import makedirs
-from os.path import splitext, isfile, basename, isdir, join
+from os.path import splitext, isfile, basename
 
 # data paths
 data = {
