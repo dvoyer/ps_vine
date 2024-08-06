@@ -403,14 +403,17 @@ def i_stampVine(svg: Path, sample_textures):
                 except KeyError:
                     intersections[seg1.start.imag] = [T1]
     for k, v in intersections.items():
-        if len(v) > 0:
-            v.sort()
-            assert len(v) % 2 == 0
-            pv = [[segs[k].point(v[i]), segs[k].point(v[i+1])] for i in range(0, len(v), 2)]
-            for i in pv:
-                test_lines.append(Path(Line(i[0], i[1])))
-                for j in range(int(i[0].real), int(i[1].real)):
-                    stamp[int(k - n2)][j-n2] = texture[int(k - n2)][j-n2]
+        try:
+            if len(v) > 0:
+                v.sort()
+                #assert len(v) % 2 == 0
+                pv = [[segs[k].point(v[i]), segs[k].point(v[i+1])] for i in range(0, len(v), 2)]
+                for i in pv:
+                    test_lines.append(Path(Line(i[0], i[1])))
+                    for j in range(int(i[0].real), int(i[1].real)):
+                        stamp[int(k - n2)][j-n2] = texture[int(k - n2)][j-n2]
+        except:
+            return
     out = Image.fromarray(stamp)
     return out.filter(ImageFilter.GaussianBlur(radius=parameters["sigma"]))
     #print(transform_vector)
@@ -510,7 +513,10 @@ if __name__ == "__main__":
             if(parameters['verbose']):
                 print(f"Outputting curve {j}")
             if debug_opts["output_pngs"]:
-                ret = stampVine(jpaths[j])
-                ret.save(f"{parameters['output_path']}{basename(i)[0]}-{j}-jit.png")
+                try:
+                    ret = stampVine(jpaths[j])
+                    ret.save(f"{parameters['output_path']}{basename(i)}-{j}-jit.png")
+                except:
+                    pass
             if debug_opts["output_svgs"]:
                 wsvg(jpaths, colors='k'*len(jpaths), stroke_widths=[.5 for k in range(len(jpaths))], attributes=None, svg_attributes=None, filename=f'{parameters["output_path"]}{i}-jit.svg')
