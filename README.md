@@ -95,6 +95,6 @@ At this time, expert mode only gatekeeps the self-intersection code bypass, whic
 [GPLv3](https://choosealicense.com/licenses/gpl-3.0)
 
 ## Acknowledgments
-Built with [svgpathtools](https://pypi.org/project/svgpathtools/), [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), and [Pillow](https://python-pillow.org/).
+Built with [svgpathtools](https://pypi.org/project/svgpathtools/), [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), and [Pillow](https://pypi.org/project/pillow/).
 
 Thanks to TSR for the idea and the setting.
