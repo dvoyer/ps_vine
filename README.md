@@ -38,12 +38,12 @@ Save as path.svg.
 
 ### Stage 0.5: Compilation
 You only need to run this step initially, or when you add more frequency data or update the included images for stamping.
-1. Run: ``python ps_prep_data.py -d raw_data/ -o data/ -i textures/``
+1. Run: ``python ps_prep_data.py -d raw_data/ -o data/ -i textures/``.
 If you don’t need image data (SVG-only output later), add ``--noimg``
 
 ### Step 1: Generation
 1. Create an svg file with a centerline you want the vine to follow.
-2. Run: ``python ps_harmonics.py path/to/centerline.svg``
+2. Run: ``python ps_harmonics.py path/to/centerline.svg``.
 - If you want svg files too, add ``-g`` or ``--svg``.
 - If you don't want any raster images, add ``--noImage``.
 3. Outputs PNGs in ``output/`` by default.
@@ -62,6 +62,7 @@ If you don’t need image data (SVG-only output later), add ``--noimg``
 | ``vineVarMin`` / ``vineVarMax`` |  0.85 / 1.1  |                    Random vine thickness scaling                    |
 |   ``minimum_separation_value``  |     0.05     |          The minimum permitted internal dimension of a vine         |
 
+TODO: make these settable via expert mode
 
 ## CLI Options
 ### All Files
